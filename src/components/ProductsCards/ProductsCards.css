@@ -1,0 +1,37 @@
+.card {
+    position: relative;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card-img {
+    height: 150px;
+    object-fit:contain;
+}
+
+.card-price {
+    text-decoration: line-through;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(104, 104, 104);
+}
+
+.card-price-discount {
+    color: rgb(216, 7, 7);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-btn-cart {
+    position: absolute;
+    background-color: rgb(95, 232, 145);
+    border: none;
+    bottom: 70px;
+    right: 10px;
+    cursor: pointer;
+}
