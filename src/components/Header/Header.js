@@ -7,7 +7,7 @@ import './Header.css';
 
 function Header() {
     return (
-        <div className='container header'>
+        <div className='header'>
             <h2>Online Shop</h2>
             <Logo />
             <div>

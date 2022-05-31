@@ -31,3 +31,10 @@ export const getProductsByCategory = (category) => {
 
     };
 };
+
+export const filterProducts = (filters) => {
+    return {
+        type: ActionTypes.FILTER_PRODUCTS,
+        payload: filters
+    }
+}

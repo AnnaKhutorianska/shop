@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAllProducts, getProductsByCategory } from '../app/actions/productActions';
@@ -6,12 +6,13 @@ import MainLayout from '../components/layouts/MainLayout';
 import FilterProducts from '../components/FilterProducts/FilterProducts';
 import ProductsCards from '../components/ProductsCards/ProductsCards';
 
+import './CategoryPage.css';
+
 function CategoryPage() {
     const params = useParams();
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
-        console.log('category=', params.categoryName);
         if (params.categoryName === undefined) {
             dispatch(getAllProducts())
         } else {
@@ -22,7 +23,7 @@ function CategoryPage() {
 
     return (
         <MainLayout>
-            <div className='container'>
+            <div className='category-page'>
                 <FilterProducts />
                 <ProductsCards />
             </div>
@@ -30,4 +31,4 @@ function CategoryPage() {
     )
 }
 
-export default CategoryPage
+export default CategoryPage;
