@@ -1,14 +1,13 @@
+import React, { useState, useEffect } from 'react';
 import { Rate, Slider } from 'antd';
-import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filterProducts } from '../../app/actions/productActions'
+import { addProductsFilter } from '../../app/actions/productActions';
 
 function FilterProducts() {
     const [filters, setFilters] = useState({
         rate: 0,
         price: 0
     });
-
     const dispatch = useDispatch();
 
     const handleChange = (name, value) => {
@@ -19,7 +18,7 @@ function FilterProducts() {
     };
 
     useEffect(() => {
-        dispatch(filterProducts(filters));
+        dispatch(addProductsFilter(filters));
     }, [filters])
 
     return (

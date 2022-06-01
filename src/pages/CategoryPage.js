@@ -5,6 +5,7 @@ import { getAllProducts, getProductsByCategory } from '../app/actions/productAct
 import MainLayout from '../components/layouts/MainLayout';
 import FilterProducts from '../components/FilterProducts/FilterProducts';
 import ProductsCards from '../components/ProductsCards/ProductsCards';
+import Menu from '../components/Menu/Menu';
 
 import './CategoryPage.css';
 
@@ -23,6 +24,7 @@ function CategoryPage() {
 
     return (
         <MainLayout>
+            <Menu />
             <div className='category-page'>
                 <FilterProducts />
                 <ProductsCards />

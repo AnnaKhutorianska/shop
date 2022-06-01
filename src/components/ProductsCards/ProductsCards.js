@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Rate } from 'antd';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './ProductsCards.css';
 
-function countDiscout(price, discount) {
-    return Math.round(price - (price * discount/100));
-}
 
 function ProductsCards() {
-    const products = useSelector(state => state.productReducer.filtredProducts);
+    const {products, filters} = useSelector(state => state.productReducer);
+    const [filtredProducts, setFilteredProducts] = useState([]);
+
+    useEffect(() => {
+        filterProducts();
+    }, [filters, products]);
+    
+    function countDiscout(price, discount) {
+        return Math.round(price - (price * discount/100));
+    };
+    
+    function filterProducts() {
+        if(!filters.price && !filters.rate) {
+            return setFilteredProducts(products);
+        }
+
+        const prods = products.filter(product => product.price <= filters.price && product.rating >= filters.rate);
+        setFilteredProducts(prods);
+    }
 
 	return (
         <div className='cards-container'>
-            {products?.map(product => (
+            {filtredProducts.map(product => (
                 <Link
                     key={product.id}
                     to={`/product/${product.id}`}

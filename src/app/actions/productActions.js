@@ -9,7 +9,7 @@ export const getAllProducts = () => {
             .then(data => {
                 dispatch({
                     type: ActionTypes.GET_ALL_PRODUCTS,
-                    payload: data
+                    payload: data.products
                 })
             })
 
@@ -25,16 +25,32 @@ export const getProductsByCategory = (category) => {
             .then(data => {
                 dispatch({
                     type: ActionTypes.GET_PRODUCTS_BY_CATEGORY,
-                    payload: data
+                    payload: data.products
                 })
             })
 
     };
 };
 
-export const filterProducts = (filters) => {
+export const addProductsFilter = (filters) => {
     return {
-        type: ActionTypes.FILTER_PRODUCTS,
+        type: ActionTypes.ADD_FILTERS,
         payload: filters
     }
 }
+
+export const getProduct = (productId) => {
+    const URL = `https://dummyjson.com/products/${productId}`;
+
+    return (dispatch) => {
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                dispatch({
+                    type: ActionTypes.GET_PRODUCT,
+                    payload: data
+                })
+            })
+
+    };
+};
