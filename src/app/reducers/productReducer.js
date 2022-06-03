@@ -6,10 +6,12 @@ const initialState = {
 		rate: 0,
 		price: 0
 	},
+	cartProducts: [],
 	product: null
 };
 
 export const productReducer = (state = initialState, { type, payload }) => {
+	console.log(state);
 	switch (type) {
 		case ActionTypes.GET_ALL_PRODUCTS:
 			return { ...state, products: payload };
@@ -19,6 +21,8 @@ export const productReducer = (state = initialState, { type, payload }) => {
 			return { ...state, filters: payload };
 		case ActionTypes.GET_PRODUCT:
 			return { ...state, product: payload };
+		case ActionTypes.ADD_PRODUCT_TO_CART:
+			return {...state, cartProducts: [...state.cartProducts, payload]}
 		default:
 			return state;
 	}

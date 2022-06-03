@@ -1,0 +1,57 @@
+.product-page {
+    display: flex;
+    gap: 20px;
+    padding: 30px 0;
+    align-items: center;
+}
+
+.ant-carousel {
+    width: 500px;
+    height: 250px;
+}
+
+.ant-carousel div {
+    width: 100%;
+    height: 100%;
+}
+
+.ant-carousel div img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.ant-carousel .slick-dots-bottom {
+    margin-bottom: 5px;
+}
+
+.ant-carousel .slick-dots li {
+    background-color: rgb(84, 235, 144);
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+    background: rgb(63, 150, 82) !important;
+}
+
+.product-page-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.product-page-desciption {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.chart-btn {
+    background-color: rgb(84, 235, 144);
+    padding: 7px 50px 3px 50px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}

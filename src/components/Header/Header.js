@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from '../Chart/Chart';
+import CartButton from '../CartButton/CartButton';
 import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
 import Logo from '../Logo/Logo';
 
@@ -12,7 +12,7 @@ function Header() {
             <Logo />
             <div>
                 <FavoriteProducts />
-                <Chart />
+                <CartButton />
             </div>
         </div>
     )

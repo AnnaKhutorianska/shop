@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Chart() {
+function CartButton(props) {
     return (
-        <div>
+        <button className={props.className} onClick={props.onClick}>
             <svg
 				width="20"
 				height="19"
@@ -23,8 +23,8 @@ function Chart() {
 					fill="#43464E"
 				/>
 			</svg>
-        </div>
+        </button>
     )
 }
 
-export default Chart;
+export default CartButton;

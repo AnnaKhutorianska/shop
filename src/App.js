@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CategoryPage from './pages/CategoryPage';
-import ProductPage from './pages/ProductPage';
 import { Provider } from 'react-redux';
+
 import store from './app/store';
+import ProductPage from './pages/ProductPage';
+import CategoryPage from './pages/CategoryPage';
+import CartPage from './pages/CartPage/CartPage';
 
 import './App.css';
 
@@ -15,6 +17,7 @@ function App() {
             <Route exact path='/' element={<CategoryPage />} />
             <Route path='/category/:categoryName' element={<CategoryPage />} />
             <Route path='/product/:productId' element={<ProductPage />} />
+            <Route path='/cart' element={<CartPage />} />
           </Routes>
         </BrowserRouter>
       </Provider>
