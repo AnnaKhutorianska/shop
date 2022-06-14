@@ -1,0 +1,11 @@
+.order {
+    flex: 2;
+    background-color: rgb(236, 236, 236);
+    padding: 15px;
+    height: 100vh;
+}
+
+.order-header {
+    box-shadow: 0px 7px 3px -4px rgba(173,173,173,0.91);
+    padding-bottom: 18px;
+}

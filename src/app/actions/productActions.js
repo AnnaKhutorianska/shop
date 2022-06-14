@@ -51,13 +51,24 @@ export const getProduct = (productId) => {
 };
 
 export const addProductToCart = (productId) => {
-	console.log(productId);
 	return (dispatch) => {
 		dispatch({
 			type: ActionTypes.ADD_PRODUCT_TO_CART,
 			payload: {
 				productId,
 				amount: 1,
+			},
+		});
+	};
+};
+
+export const changeProductsAmount = (productId, amount) => {
+	return (dispatch) => {
+		dispatch({
+			type: ActionTypes.CHANGE_PRODUCTS_AMOUNT,
+			payload: {
+				productId,
+				amount
 			},
 		});
 	};

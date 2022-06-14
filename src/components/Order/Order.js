@@ -1,9 +1,12 @@
 import React from 'react';
+
 import './Order.css';
 
 function Order() {
 	return(
-		<div>Order Summary</div>
+		<div className='order'>
+			<div className='order-header cart-page-title'>Order Summary</div>
+		</div>
 	);
 }
 

@@ -7,9 +7,11 @@ import './CartPage.css';
 
 function CartPage() {
 	return (
-        <div className='container cart-page'>
-            <CartListProducts />
-            <Order />
+        <div className='cart-page'>
+            
+                <CartListProducts />
+                <Order />
+            
         </div>
     );
 }

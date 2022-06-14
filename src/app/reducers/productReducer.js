@@ -26,7 +26,12 @@ export const productReducer = (state = initialState, { type, payload }) => {
 			return {
 				...state,
 				cartProducts: product ? state.cartProducts : [...state.cartProducts, payload]
-			}
+			};
+		case ActionTypes.CHANGE_PRODUCTS_AMOUNT:
+			return {
+				...state,
+				cartProducts: state.cartProducts.map(prod => prod.productId === payload.productId ? {...prod, amount: payload.amount} : prod)
+			}	
 		default:
 			return state;
 	}
