@@ -19,7 +19,6 @@ function CategoryPage() {
         } else {
             dispatch(getProductsByCategory(params.categoryName));
         }
-
     }, [params.categoryName]);
 
     return (

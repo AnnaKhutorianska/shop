@@ -11,42 +11,45 @@ import CartButton from '../components/CartButton/CartButton';
 import './ProductPage.css';
 
 function ProductPage() {
-    const params = useParams();
-    const dispatch = useDispatch();
-    const product = useSelector(state => state.productReducer.product);
-    console.log(product);
+	const params = useParams();
+	const dispatch = useDispatch();
+	const product = useSelector((state) => state.productReducer.product);
+	console.log(product);
 
-    useEffect(() => {
-        dispatch(getProduct(params.productId));
-    }, [params.productId]);
+	useEffect(() => {
+		dispatch(getProduct(params.productId));
+	}, [params.productId]);
 
-    return (
-        <MainLayout>
-            {product && (
-                <div className='product-page'>
-                    <div>
-                        <div className='product-page-title'>{product.title}</div>
-                        <Carousel
-                            autoplay
-                            autoplaySpeed={2000}
-                        >
-                            {product.images.map(image => (
-                                <div key={image} style={{ height: 100 }}>
-                                    <img src={image} alt={image} />
-                                </div>
-                            ))}
-                        </Carousel>
-                    </div>
-                    <div>
-                        <p className='product-page-desciption'>{product.description}</p>
-                        <p className='card-price'>&#x24;{product.price}</p>
-                        <p className='card-price-discount'>&#x24;{countDiscout(product.price, product.discountPercentage)}</p>
-                        <CartButton className={'chart-btn'} onClick={() => dispatch(addProductToCart(product.id))} />
-                    </div>
-                </div>
-            )}
-        </MainLayout>
-    )
+	function handleClick(id) {
+		dispatch(addProductToCart(id));
+	}
+
+	return (
+		<MainLayout>
+			{product && (
+				<div className="product-page">
+					<div>
+						<div className="product-page-title">{product.title}</div>
+						<Carousel autoplay autoplaySpeed={2000}>
+							{product.images.map((image) => (
+								<div key={image} style={{ height: 100 }}>
+									<img src={image} alt={image} />
+								</div>
+							))}
+						</Carousel>
+					</div>
+					<div>
+						<p className="product-page-desciption">{product.description}</p>
+						<p className="card-price">&#x24;{product.price}</p>
+						<p className="card-price-discount">
+							&#x24;{countDiscout(product.price, product.discountPercentage)}
+						</p>
+						<CartButton className={'chart-btn'} onClick={handleClick.bind(null, product.id)} />
+					</div>
+				</div>
+			)}
+		</MainLayout>
+	);
 }
 
-export default ProductPage
+export default ProductPage;

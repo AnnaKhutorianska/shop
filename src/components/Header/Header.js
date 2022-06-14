@@ -1,21 +1,27 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import CartButton from '../CartButton/CartButton';
-import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
 import Logo from '../Logo/Logo';
 
 import './Header.css';
 
 function Header() {
-    return (
-        <div className='header'>
-            <h2>Online Shop</h2>
-            <Logo />
-            <div>
-                <FavoriteProducts />
-                <CartButton />
-            </div>
-        </div>
-    )
+	const navigate = useNavigate();
+
+	function handleClick() {
+		navigate('/cart');
+	}
+
+	return (
+		<div className="header">
+			<h2>Online Shop</h2>
+			<Logo />
+			<div>
+				<CartButton onClick={handleClick} />
+			</div>
+		</div>
+	);
 }
 
-export default Header
+export default Header;

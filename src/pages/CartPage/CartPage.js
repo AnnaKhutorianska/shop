@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+
+import Order from '../../components/Order/Order';
+import CartListProducts from '../../components/CartListProducts/CartListProducts';
+
+import './CartPage.css';
 
 function CartPage() {
-    return (
-        <div>CartPage</div>
+	return (
+        <div className='container cart-page'>
+            <CartListProducts />
+            <Order />
+        </div>
     );
-};
+}
 
-export default CartPage
+export default CartPage;

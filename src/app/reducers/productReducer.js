@@ -22,7 +22,11 @@ export const productReducer = (state = initialState, { type, payload }) => {
 		case ActionTypes.GET_PRODUCT:
 			return { ...state, product: payload };
 		case ActionTypes.ADD_PRODUCT_TO_CART:
-			return {...state, cartProducts: [...state.cartProducts, payload]}
+			const product = state.cartProducts.find(prod => prod.productId === payload.productId);
+			return {
+				...state,
+				cartProducts: product ? state.cartProducts : [...state.cartProducts, payload]
+			}
 		default:
 			return state;
 	}

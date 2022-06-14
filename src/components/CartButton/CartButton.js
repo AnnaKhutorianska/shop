@@ -1,8 +1,13 @@
 import React from 'react';
 
 function CartButton(props) {
+	function handleClick(e) {
+        e.preventDefault();
+		props.onClick();
+    };
+
     return (
-        <button className={props.className} onClick={props.onClick}>
+        <button className={props.className} onClick={handleClick}>
             <svg
 				width="20"
 				height="19"

@@ -16,7 +16,7 @@ function ProductsCards() {
 
     useEffect(() => {
         filterProducts();
-    }, [filters, products]);
+    }, [filters, products])
      
     function filterProducts() {
         if(!filters.price && !filters.rate) {
@@ -27,6 +27,10 @@ function ProductsCards() {
         setFilteredProducts(prods);
     }
 
+    function handleClick(id) {
+        dispatch(addProductToCart(id));
+    }
+
 	return (
         <div className='cards-container'>
             {filtredProducts.map(product => (
@@ -34,7 +38,6 @@ function ProductsCards() {
                     key={product.id}
                     to={`/product/${product.id}`}
                     className='link'
-                    onClick={(e) => e.preventDefault()}
                 >
                     <div className='card'>
                         <img className='card-img' src={product.thumbnail} alt={product.title}/>
@@ -48,7 +51,7 @@ function ProductsCards() {
                             />
                             <p className='card-price'>&#x24;{product.price}</p>
                             <p className='card-price-discount'>&#x24;{countDiscout(product.price, product.discountPercentage)}</p>
-                            <button className='card-btn-cart'><CartButton onClick={() => dispatch(addProductToCart(product.id))} /></button>
+                            <CartButton className='card-btn-cart' onClick={handleClick.bind(null, product.id)} />
                         </div>
                     </div>
                 </Link>
