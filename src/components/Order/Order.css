@@ -9,3 +9,30 @@
     box-shadow: 0px 7px 3px -4px rgba(173,173,173,0.91);
     padding-bottom: 18px;
 }
+
+.order-details {
+
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-check-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgb(79, 191, 67);
+    color: white;
+    padding: 10px 50px;
+    transition-duration: 0.4s;
+}
+
+.order-check-btn:hover {
+    background-color: rgb(40, 128, 56);
+}
+
+.order-check-btn-wrapper {
+    text-align: center;
+}
