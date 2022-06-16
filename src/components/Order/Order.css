@@ -11,7 +11,7 @@
 }
 
 .order-details {
-
+    padding: 15px 0;
 }
 
 .flex-container {
@@ -35,4 +35,13 @@
 
 .order-check-btn-wrapper {
     text-align: center;
+}
+
+.order-delivery {
+    width: 100%;
+}
+
+.order-details-text {
+    font-size: 15px;
+    font-weight: 500;
 }

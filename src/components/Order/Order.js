@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Select } from 'antd';
 
 import { countDiscout } from '../../utils/helper'
+
 import './Order.css';
 
 const { Option } = Select;
@@ -25,16 +26,14 @@ function Order({ products }) {
 			<div className='order-header cart-page-title'>Order Summary</div>
 			<div className='order-details'>
 				<div className='flex-container'>
-					<p>ITEMS</p>
-					<p>&#36;{countTotalPrice()}</p>
+					<p className='order-details-text'>ITEMS {products.length}</p>
+					<p className='order-details-text'>&#36;{countTotalPrice()}</p>
 				</div>
 				<div>
-					<p>SHIPPING</p>
+					<p className='order-details-text'>SHIPPING</p>
 					<Select
 						defaultValue="Select delivery plan"
-						style={{
-							width: 400,
-						}}
+						className='order-delivery'
 						onChange={handleChange}
 					>
 						<Option value='9'>Standart delivery - &#36;9</Option>
@@ -45,8 +44,8 @@ function Order({ products }) {
 			</div>
 			<div>
 				<div className='flex-container'>
-					<p>TOTAL COST</p>
-					<p>&#36;{countTotalPrice() + deliveryPlan}</p>
+					<p className='order-details-text'>TOTAL COST</p>
+					<p className='order-details-text'>&#36;{countTotalPrice() + deliveryPlan}</p>
 				</div>
 				<div className='order-check-btn-wrapper'>
 					<button className='order-check-btn'>CHECK</button>

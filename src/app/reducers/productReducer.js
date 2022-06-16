@@ -11,7 +11,6 @@ const initialState = {
 };
 
 export const productReducer = (state = initialState, { type, payload }) => {
-	console.log(state);
 	switch (type) {
 		case ActionTypes.GET_ALL_PRODUCTS:
 			return { ...state, products: payload };

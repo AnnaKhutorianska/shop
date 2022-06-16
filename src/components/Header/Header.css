@@ -1,4 +1,12 @@
 .header {
     display: flex;
     justify-content: space-between;
+    padding: 5px 0;
+}
+
+.header-cart {
+    border: none;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
 }

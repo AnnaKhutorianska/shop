@@ -18,7 +18,7 @@ function Header() {
 			<h2>Online Shop</h2>
 			<Logo />
 			<div>
-				<CartButton onClick={handleClick} />
+				<CartButton onClick={handleClick} className='header-cart' />
 			</div>
 		</div>
 	);

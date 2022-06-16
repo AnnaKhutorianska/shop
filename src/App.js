@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import store from './app/store';
-import ProductPage from './pages/ProductPage';
-import CategoryPage from './pages/CategoryPage';
+import ProductPage from './pages/ProductPage/ProductPage';
+import CategoryPage from './pages/CategoryPage/CategoryPage';
 import CartPage from './pages/CartPage/CartPage';
 
 import './App.css';

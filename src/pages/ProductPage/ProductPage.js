@@ -3,10 +3,10 @@ import { Carousel } from 'antd';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import MainLayout from '../components/layouts/MainLayout';
-import { getProduct, addProductToCart } from '../app/actions/productActions';
-import { countDiscout } from '../utils/helper';
-import CartButton from '../components/CartButton/CartButton';
+import MainLayout from '../../components/layouts/MainLayout';
+import { getProduct, addProductToCart } from '../../app/actions/productActions';
+import { countDiscout } from '../../utils/helper';
+import CartButton from '../../components/CartButton/CartButton';
 
 import './ProductPage.css';
 
